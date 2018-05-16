@@ -14,6 +14,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) throws Exception {
+		System.out.println("1st change after commit");
 		SpringApplication.run(SpringBootWebApplication.class, args);
 	}
 
