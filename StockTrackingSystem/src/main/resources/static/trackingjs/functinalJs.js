@@ -1,3 +1,7 @@
-function history(billNo){
-	window.location="/transactionHistory?billNo="+billNo;
+function history(billNo,completedOrPending){
+	window.location="/transactionHistory?billNo="+billNo+"&completedOrPending="+completedOrPending;
+}
+
+function edit(billNo){
+	window.location="/editOrder?billNo="+billNo;
 }

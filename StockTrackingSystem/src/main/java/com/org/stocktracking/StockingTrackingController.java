@@ -30,9 +30,33 @@ public class StockingTrackingController {
 	}
 	
 	@RequestMapping(value = "/transactionHistory", method = RequestMethod.GET)
-	public String transactionHistory(Map<String, Object> model, @RequestParam String billNo) {
-		
+	public String transactionHistory(Map<String, Object> model, @RequestParam String billNo,@RequestParam String completedOrPending ) {
+		model.put("completedOrPending", completedOrPending);
 		return "transactionHistory";
+	}
+	
+	@RequestMapping(value = "/newOrder", method = RequestMethod.GET)
+	public String newOrder(Map<String, Object> model) {
+		
+		return "newOrder";
+	}
+	
+	@RequestMapping(value = "/newOrderSave", method = RequestMethod.GET)
+	public String newOrderSave(Map<String, Object> model) {
+		
+		return "completedOrder";
+	}
+	
+	@RequestMapping(value = "/editOrder", method = RequestMethod.GET)
+	public String editOrder(Map<String, Object> model,@RequestParam String billNo) {
+		
+		return "editOrder";
+	}
+	
+	@RequestMapping(value = "/editOrderSave", method = RequestMethod.GET)
+	public String editOrderSave(Map<String, Object> model) {
+		
+		return "completedOrder";
 	}
 
 }

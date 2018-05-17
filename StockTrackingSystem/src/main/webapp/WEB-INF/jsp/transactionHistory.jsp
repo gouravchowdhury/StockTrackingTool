@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
   <meta charset="utf-8">
@@ -62,7 +64,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -130,12 +132,17 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Pending 
-        <small>Orders</small>
+        Transaction 
+        <small>History</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Pending Orders</a></li>
+        
+        <li>
+        <c:if test="${completedOrPending eq 'completedRequest'}"><a href="/completedOrder">Back</a></c:if>
+         <c:if test="${completedOrPending eq 'pendingRequest'}"><a href="/pendingOrder">Back</a></c:if>
+        
+        </li>
         
       </ol>
     </section>
@@ -148,7 +155,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Pending Orders List</h3>
+              <h3 class="box-title">Transaction History</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -157,214 +164,151 @@
                 <tr>
                 <th>Holder</th>
                   <th>Received Date</th>
-                  <th>Quality</th>
-                  <th>Box Count</th>
-                  <th>Pending Box Count</th>
+                  <th>Delivered Date</th>
+                  <th>Delivered Box Count</th>
                   <th>Bill No.</th>
-                  <th>Transaction History</th>
-                  <th>Edit</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                 <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                 <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
+                </tr>
+                <tr>
+                <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                 <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                 <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                 <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                 <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
                 </tr>
                 <tr>
                <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
                 </tr>
                 <tr>
-                <td>Dollar Industries</td>
+                 <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
                 </tr>
                 <tr>
-               <td>Dollar Industries</td>
+                 <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                 <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
                 </tr>
                 <tr>
                <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                 <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
                 </tr>
                 <tr>
                 <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
+                </tr>
+                <tr>
+                 <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
                 </tr>
                 <tr>
                 <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                 <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
-                </tr>
-                <tr>
-                <td>Dollar Industries</td>
-                  <td>14/08/2017</td>
-                  <td>comfort Loose</td>
-                  <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
-                  <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
                 </tr>
                 <tr>
                <td>Dollar Industries</td>
                   <td>14/08/2017</td>
-                  <td>comfort Loose</td>
+                  <td>29/08/2017</td>
                   <td><span class="badge bg-green">330</span></td>
-                  <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                  <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
+                </tr>
+                <tr>
+                <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+               <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+                <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
+                </tr>
+                <tr>
+               <td>Dollar Industries</td>
+                  <td>14/08/2017</td>
+                  <td>29/08/2017</td>
+                  <td><span class="badge bg-green">330</span></td>
+                  <td>D101</td>
                 </tr>
                
                 </tbody>
@@ -372,12 +316,9 @@
                 <tr>
                     <th>Holder</th>
                   <th>Received Date</th>
-                  <th>Quality</th>
-                  <th>Box Count</th>
-                  <th>Pending Box Count</th>
+                  <th>Delivered Date</th>
+                  <th>Delivered Box Count</th>
                   <th>Bill No.</th>
-                  <th>Transaction History</th>
-                  <th>Edit</th>
                 </tr>
                 </tfoot>
               </table>

@@ -62,7 +62,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -184,7 +184,7 @@
                   <td>990</td>
                   <td>D101</td>
                   
-                  <td><span class="label label-primary" style="cursor:pointer"  onclick="history('D101')">Transaction History</span></td>
+                  <td><span class="label label-primary" style="cursor:pointer"  onclick="history('D101','completedRequest')">Transaction History</span></td>
                 </tr>
                 <tr>
                 <td>Dollar Industries</td>

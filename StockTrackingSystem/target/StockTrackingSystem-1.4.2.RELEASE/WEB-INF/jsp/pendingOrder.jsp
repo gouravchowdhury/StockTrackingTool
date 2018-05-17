@@ -173,8 +173,8 @@
                   <td><span class="badge bg-green">330</span></td>
                   <td><span class="badge bg-red">20</span></td>
                   <td>D101</td>
-                 <td><span class="label label-primary" style="cursor:pointer">Transaction History</span></td>
-                  <td><span class="badge bg-yellow" style="cursor:pointer">Edit</span></td>
+                 <td><span class="label label-primary" style="cursor:pointer" onclick="history('D101','pendingRequest')">Transaction History</span></td>
+                  <td><span class="badge bg-yellow" style="cursor:pointer" onclick="edit('D101')">Edit</span></td>
                 </tr>
                 <tr>
                <td>Dollar Industries</td>
@@ -424,6 +424,8 @@
 <script src="/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+<!-- All business functions -->
+<script src="/trackingjs/functinalJs.js"></script>
 <!-- page script -->
 <script>
   $(function () {

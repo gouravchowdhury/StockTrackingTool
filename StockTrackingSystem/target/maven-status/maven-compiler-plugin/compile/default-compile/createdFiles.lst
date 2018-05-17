@@ -1,3 +1,4 @@
 com\org\stocktracking\StockingTrackingController.class
 com\org\stocktracking\WelcomeController.class
 com\org\stocktracking\SpringBootWebApplication.class
+com\org\stocktracking\LoginController.class
